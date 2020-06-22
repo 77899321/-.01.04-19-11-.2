@@ -1,0 +1,83 @@
+#include <iostream>
+#include<cmath>
+
+using namespace std;
+
+struct Coordinate
+{
+	short id;
+	int x;
+	int y;
+};
+
+void printinfoCoord(Coordinate coord)
+{
+	cout << "id:" << coord.id << endl;
+	cout << "x:" << coord.x << endl;
+	cout << "y:" << coord.y << "\n\n";
+}
+
+
+struct Square1
+{
+	int point1;
+	int point2;
+	int point3;
+	int point4;
+};
+
+void printinfo1(Square1 sqr)
+{
+	cout << "Квадрат N1" << endl;
+	cout << "A:" << sqr.point1 << endl;
+	cout << "B:" << sqr.point2 << endl;
+	cout << "C:" << sqr.point3 << endl;
+	cout << "D:" << sqr.point4 << "\n\n";
+}
+
+
+struct Square2
+{
+	int a;
+	int b;
+	int c;
+	int d;
+	int S = pow(a, 2);
+	int P = a + b + c + d;
+};
+
+void printinfo2(Square2 sqr)
+{
+	cout << "Квадрат N2" << endl;
+	cout << "A:" << sqr.a << endl;
+	cout << "B:" << sqr.b << endl;
+	cout << "C:" << sqr.c << endl;
+	cout << "D:" << sqr.d << endl;
+	cout << "S = " << sqr.S << endl;
+	cout << "P = " << sqr.P << "\n\n";
+}
+
+void equality(Square1 sqr1, Square2 sqr2)
+{
+	if (sqr1.point1 == sqr2.a && sqr1.point2 == sqr2.b && sqr1.point3 == sqr2.c && sqr1.point4 == sqr2.d)
+		cout << "Квадраты идентичны" << endl;
+	else cout << "Квадраты отличаются" << endl;
+}
+
+void main()
+{
+	setlocale(0, "");
+
+	Coordinate coord = { 1, 5, 5 };
+	printinfoCoord(coord);
+
+	Square1 sqr1 = { 8, 8, 8, 8 };
+	printinfo1(sqr1);
+
+	Square2 sqr2 = { 6, 6, 6, 6 };
+	printinfo2(sqr2);
+
+	equality(sqr1, sqr2);
+}
+
+
